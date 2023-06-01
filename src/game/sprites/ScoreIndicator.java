@@ -15,7 +15,7 @@ public class ScoreIndicator implements Sprite {
     private final Counter scoreCounter;
 
     /**
-     * Constructs a new ScoreIndicator with the given parameters.
+     * Constructs a new ScoreIndicator.
      * @param scoreCounter A Counter object representing the games' score
      */
     public ScoreIndicator(Counter scoreCounter) {

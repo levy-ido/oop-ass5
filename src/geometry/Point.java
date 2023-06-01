@@ -47,14 +47,6 @@ public class Point {
     public double getY() {
         return this.y;
     }
-
-    /**
-     * Compares this point with a given other point for equality. Two points are considered equal if their x and y
-     * coordinates are exactly the same, up to a small difference.
-     *
-     * @param obj An Object representing the other point to compare to
-     * @return true if the two points are equal, false otherwise
-     */
     @Override
     public boolean equals(Object obj) {
         Point other = (Point) obj;

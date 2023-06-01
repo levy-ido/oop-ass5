@@ -4,7 +4,7 @@ import game.sprites.Ball;
 import game.sprites.Block;
 
 /**
- * Objects implementing this interface listen for hit events and act accordingly.
+ * Objects implementing this interface listen for hit events.
  */
 public interface HitListener {
     /**

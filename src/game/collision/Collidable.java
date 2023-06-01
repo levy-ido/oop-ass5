@@ -18,6 +18,7 @@ public interface Collidable {
 
     /**
      * Returns an updated velocity based on a collision point and a collision velocity.
+     * If this collidable is a HitNotifier, notifies all listeners a hit occurred.
      *
      * @param hitter A Ball object representing the ball that hit this collidable
      * @param collisionPoint  A Point object representing the collision point

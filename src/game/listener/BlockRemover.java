@@ -6,11 +6,9 @@ import game.Game;
 import game.sprites.Block;
 
 /**
- * This class is in charge of removing blocks from the game, as well as keeping count of the blocks that remain.
+ * In charge of removing blocks from the game, as well as counting the blocks that remain.
  */
-public class BlockRemover implements HitListener {
-    private final Game game;
-    private Counter removedBlocks;
+public class BlockRemover extends Remover {
 
     /**
      * Constructs a new BlockRemover with the given game and counter.
@@ -18,12 +16,11 @@ public class BlockRemover implements HitListener {
      * @param removedBlocks A Counter object representing the number of blocks removed
      */
     public BlockRemover(Game game, Counter removedBlocks) {
-        this.game = game;
-        this.removedBlocks = removedBlocks;
+        super(game, removedBlocks);
     }
     @Override
     public void hitEvent(Block beingHit, Ball hitter) {
-        beingHit.removeFromGame(this.game);
-        this.removedBlocks.increase(1);
+        beingHit.removeFromGame(super.getGame());
+        super.getCounter().increase(1);
     }
 }

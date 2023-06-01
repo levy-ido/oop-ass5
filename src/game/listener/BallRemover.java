@@ -7,11 +7,9 @@ import game.sprites.Block;
 import geometry.Rectangle;
 
 /**
- * Removes balls from the game.
+ * Removes balls from the game and counts remaining balls.
  */
-public class BallRemover implements HitListener {
-    private final Game game;
-    private final Counter removedBalls;
+public class BallRemover extends Remover {
 
     /**
      * Constructs a new BallRemover.
@@ -19,16 +17,15 @@ public class BallRemover implements HitListener {
      * @param removedBalls A Counter object representing the number of balls removed
      */
     public BallRemover(Game game, Counter removedBalls) {
-        this.game = game;
-        this.removedBalls = removedBalls;
+        super(game, removedBalls);
     }
     @Override
     public void hitEvent(Block beingHit, Ball hitter) {
-        Rectangle beingHitColRect = beingHit.getCollisionRectangle();
-        Rectangle bottomBorder = new Rectangle(20.0, 580.0, 760.0, 20.0);
-        if (beingHitColRect.equals(bottomBorder)) {
-            hitter.removeFromGame(this.game);
-            this.removedBalls.increase(1);
+        Rectangle beingHitOutline = beingHit.getCollisionRectangle();
+        Rectangle bottomBorderOutline = new Rectangle(20.0, 580.0, 760.0, 20.0);
+        if (beingHitOutline.equals(bottomBorderOutline)) {
+            hitter.removeFromGame(super.getGame());
+            super.getCounter().increase(1);
         }
     }
 }

@@ -5,7 +5,7 @@ import game.sprites.Block;
 import auxiliary.Counter;
 
 /**
- * Keeps track of score.
+ * Updates score when a block is hit.
  */
 public class ScoreTrackingListener implements HitListener {
     private final Counter currentScore;

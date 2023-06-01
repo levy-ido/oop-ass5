@@ -52,7 +52,6 @@ public class Block implements Collidable, Sprite, HitNotifier {
     public Rectangle getCollisionRectangle() {
         return this.outline;
     }
-
     @Override
     public Velocity hit(Ball hitter, Point collisionPoint, Velocity currentVelocity) {
         Line[] sides = this.outline.getSides();

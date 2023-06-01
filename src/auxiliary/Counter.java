@@ -1,7 +1,7 @@
 package auxiliary;
 
 /**
- * Why not just use int?
+ * A simple counter.
  */
 public class Counter {
     private int value;
@@ -23,7 +23,7 @@ public class Counter {
     }
     /**
      * Decreases this counters' value by number.
-     * @param number An integer representing the number to Decrease this counters' value by
+     * @param number An integer representing the number to decrease this counters' value by
      */
     public void decrease(int number) {
         this.value -= number;
